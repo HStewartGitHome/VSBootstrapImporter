@@ -472,7 +472,8 @@ namespace VSBootstrapImporter.Common.Services
                     }
                     else if (insideScript == false)
                     {
-                        Trace.TraceInformation(s);
+                        if (options.IsTraceOn(Trace_Options.TraceInfo))
+                            Trace.TraceInformation(s);
                         stringWork.Add(s);
                     }
                 }
@@ -850,10 +851,12 @@ namespace VSBootstrapImporter.Common.Services
                         {
                             str = "    @if(Request.Path.Value == " + Support.Quote(@"/" + options.PageName) + ")";
                             stringsResult.Add(str);
-                            Trace.TraceInformation(str);
+                            if (options.IsTraceOn(Trace_Options.TraceInfo))
+                                Trace.TraceInformation(str);
                             str = "    {";
                             stringsResult.Add(str);
-                            Trace.TraceInformation(str);
+                            if (options.IsTraceOn(Trace_Options.TraceInfo))
+                                Trace.TraceInformation(str);
                             foreach (Asset asset in info.Assets)
                             {
                                 if (asset.IsScriptAsset() == true)
@@ -863,13 +866,15 @@ namespace VSBootstrapImporter.Common.Services
                                         str = str.Replace("assets", options.PageName + @"/assets");
                                     str = "        " + str;
                                     stringsResult.Add(str);
-                                    Trace.TraceInformation(str);
+                                    if (options.IsTraceOn(Trace_Options.TraceInfo))
+                                        Trace.TraceInformation(str);
                                 }
                             }
 
                             str = "    }";
                             stringsResult.Add(str);
-                            Trace.TraceInformation(str);
+                            if (options.IsTraceOn(Trace_Options.TraceInfo))
+                                Trace.TraceInformation(str);
                         }
                         else if (options.IsUseSharedAssets() == true)
                         {
@@ -879,14 +884,16 @@ namespace VSBootstrapImporter.Common.Services
                                 {
                                     str = asset.HtmlAsset;
                                     stringsResult.Add(str);
-                                    Trace.TraceInformation(str);
+                                    if (options.IsTraceOn(Trace_Options.TraceInfo))
+                                        Trace.TraceInformation(str);
                                 }
                             }
                         }
                     }
                 }
                 stringsResult.Add(s);
-                Trace.TraceInformation(s);
+                if (options.IsTraceOn(Trace_Options.TraceInfo))
+                    Trace.TraceInformation(s);
             }
 
             return stringsResult;

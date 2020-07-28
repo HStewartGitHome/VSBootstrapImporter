@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Windows.Controls.Primitives;
 
 namespace VSBootstrapImporter.Common.Models
 {
@@ -183,14 +184,15 @@ namespace VSBootstrapImporter.Common.Models
                     break;
 
                 case Trace_Options.TraceNone:
+                    result = false;
+                    break;
                 default:
+                    Trace.TraceWarning("Failed with value of ", (int)option);
                     result = false;
                     break;
             }
 
-            if (result == false)
-                Trace.TraceInformation("Failed with value of ", (int)option);
-
+            
             
             return result;
         }

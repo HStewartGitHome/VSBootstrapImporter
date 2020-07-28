@@ -9,11 +9,21 @@ namespace WpfNetBootstrap
     /// </summary>
     public partial class Test : Window
     {
+        // logging is turn off for check in version
+        private bool _enableLogging = false;    
         public Test()
         {
-            string strFile = @"c:\temp\log\wpfdemo.log";
-            IFileIO fileIO = new LogFileIO(strFile);
-            FileIOFactory.SetFileIO(fileIO);
+            if (_enableLogging)
+            {
+                string strFile = @"c:\temp\log\wpfdemo.log";
+                IFileIO fileIO = new LogFileIO(strFile);
+                FileIOFactory.SetFileIO(fileIO);
+            }
+            else
+            {
+                IFileIO fileIO = new FileIO();
+                FileIOFactory.SetFileIO(fileIO);
+            }
             InitializeComponent();
         }
     }
