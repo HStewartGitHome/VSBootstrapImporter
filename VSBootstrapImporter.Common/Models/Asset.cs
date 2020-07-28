@@ -26,13 +26,13 @@ namespace VSBootstrapImporter.Common.Models
                         RawAsset = strResult;
                 }
             }
-            catch( IOException e )
+            catch (IOException e)
             {
                 Trace.TraceError("Exception creating asset", e);
             }
         }
 
-        public static string GetScriptAsset( string str )
+        public static string GetScriptAsset(string str)
         {
             string output = "";
             string strResult;
@@ -67,7 +67,7 @@ namespace VSBootstrapImporter.Common.Models
 
             return output;
         }
-    
+
 
         // public variables
 

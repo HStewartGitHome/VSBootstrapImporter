@@ -10,7 +10,7 @@ namespace WpfNetBootstrap
     public partial class Test : Window
     {
         // logging is turn off for check in version
-        private bool _enableLogging = false;    
+        private readonly bool _enableLogging = false;
         public Test()
         {
             if (_enableLogging)

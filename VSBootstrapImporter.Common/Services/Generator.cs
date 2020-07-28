@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
 using VSBootstrapImporter.Common.Models;
-using VSBootstrapImporter.Common.Services;
 using WpfNetBootstrap.Common.Services.IO;
 
 namespace VSBootstrapImporter.Common.Services
 {
     public class Generator : CommonSupport
     {
-        public DataInfo CreateDataInfo(Options options)
+        public static DataInfo CreateDataInfo(Options options)
         {
             DataInfo info = new DataInfo();
             if (options.IsUseSameIndexAssets() == false)
@@ -60,7 +58,7 @@ namespace VSBootstrapImporter.Common.Services
                     info.NewHostStrings = AdjustForScriptAssets(info, options);
             }
 
-          
+
 
             if (options.HasPreview() == true)
             {
@@ -71,7 +69,7 @@ namespace VSBootstrapImporter.Common.Services
             return info;
         }
 
-        public bool IsBootstrapHtml(Options options,
+        public static bool IsBootstrapHtml(Options options,
                                  string strPath,
                                  string strHtml)
         {
@@ -82,7 +80,7 @@ namespace VSBootstrapImporter.Common.Services
 
             try
             {
-                stringResult = LoadStrings(stringHtml,options);
+                stringResult = LoadStrings(stringHtml, options);
                 foreach (string s in stringResult)
                 {
                     if (s.Contains("stylesheet") == true)
@@ -103,7 +101,7 @@ namespace VSBootstrapImporter.Common.Services
 
         // private methods
 
-        private List<string> MakePreview(Options options,
+        public static List<string> MakePreview(Options options,
                                           DataInfo info)
         {
             List<string> stringsResult = new List<string>();
@@ -237,7 +235,7 @@ namespace VSBootstrapImporter.Common.Services
             foreach (string s in info.ScriptAssets)
                 stringsResult.Add("       " + s);
             stringsResult.Add("");
-             
+
 
 
             stringsResult.Add("Asset List");
@@ -302,7 +300,7 @@ namespace VSBootstrapImporter.Common.Services
             return result;
         }
 
-        private List<string> MakeHtml(Options options)
+        public static List<string> MakeHtml(Options options)
         {
             List<string> stringResult = new List<string>();
 
@@ -323,13 +321,13 @@ namespace VSBootstrapImporter.Common.Services
             return stringResult;
         }
 
-        private List<string> MakeHostHtml(DataInfo info,
+        public static List<string> MakeHostHtml(DataInfo info,
                                            Options options)
         {
             List<string> stringResult = new List<string>();
             string htmlFile = GetHostFile(options, info);
 
-            if (CommonIO.Exists(htmlFile,options) == true)
+            if (CommonIO.Exists(htmlFile, options) == true)
             {
                 if (options.IsTraceOn(Trace_Options.TraceInfo))
                     Trace.TraceInformation("Host file = [" + htmlFile + "]");
@@ -345,7 +343,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringResult;
         }
 
-        private List<Asset> MakeScriptAssets(DataInfo info,
+        public static List<Asset> MakeScriptAssets(DataInfo info,
                                             Options options)
         {
             List<string> stringFile = info.HtmlStrings;
@@ -422,7 +420,7 @@ namespace VSBootstrapImporter.Common.Services
             return assetList;
         }
 
-        private List<string> MakeBlazer(DataInfo info,
+        public static List<string> MakeBlazer(DataInfo info,
                                         Options options)
         {
             List<string> stringResult = new List<string>();
@@ -477,7 +475,7 @@ namespace VSBootstrapImporter.Common.Services
                         stringWork.Add(s);
                     }
                 }
-               
+
             }
             else
                 stringWork = stringFile;
@@ -515,7 +513,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringResult;
         }
 
-        private Asset AddScriptToHostAsset(Options options,
+        public static Asset AddScriptToHostAsset(Options options,
                                             string str)
         {
             Asset CurrentAsset = null;
@@ -536,7 +534,7 @@ namespace VSBootstrapImporter.Common.Services
             return CurrentAsset;
         }
 
-        private string ConvertBodyStyleToDivStyle(List<string> stringFile)
+        public static string ConvertBodyStyleToDivStyle(List<string> stringFile)
         {
             string result = "";
             string strFound = "";
@@ -556,7 +554,7 @@ namespace VSBootstrapImporter.Common.Services
             return result;
         }
 
-        private List<string> MakeAssets(DataInfo info,
+        public static List<string> MakeAssets(DataInfo info,
                                         Options options)
         {
             List<string> stringsResult = new List<string>();
@@ -611,7 +609,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private void UpdateBlazorForAssets(DataInfo info,
+        public static void UpdateBlazorForAssets(DataInfo info,
                                             Options options)
         {
             if (options.IsUseCustomAssets() == true)
@@ -628,7 +626,7 @@ namespace VSBootstrapImporter.Common.Services
             }
         }
 
-        private List<string> MakeHostAssets(DataInfo info,
+        public static List<string> MakeHostAssets(DataInfo info,
                                             Options options)
         {
             List<string> stringsResult = new List<string>();
@@ -668,12 +666,12 @@ namespace VSBootstrapImporter.Common.Services
                     }
                 }
             }
-            
+
 
             return stringsResult;
         }
 
-        private List<string> MakeNavMenuStrings(Options options)
+        public static List<string> MakeNavMenuStrings(Options options)
         {
             List<string> stringsResult = new List<string>();
             string str;
@@ -691,7 +689,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private string MakeHostRenderMode(DataInfo info,
+        public static string MakeHostRenderMode(DataInfo info,
                                           Options options)
         {
             string result = "";
@@ -712,7 +710,7 @@ namespace VSBootstrapImporter.Common.Services
             return result;
         }
 
-        private List<string> MakeNewHostStrings(DataInfo info)
+        public static List<string> MakeNewHostStrings(DataInfo info)
         {
             List<string> stringsResult = new List<string>();
 
@@ -733,7 +731,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private List<string> MakeNewNavMenuStrings(DataInfo info,
+        public static List<string> MakeNewNavMenuStrings(DataInfo info,
                                                    Options options)
         {
             string fileName = GetNavMenuFile(options, info);
@@ -742,13 +740,13 @@ namespace VSBootstrapImporter.Common.Services
             if (info.ProjectType == Type_Options.ASPNetRazor)
                 strings = info.NewHostStrings;
             else
-                strings = LoadStrings(fileName,options);
+                strings = LoadStrings(fileName, options);
 
             List<string> stringsResult = MakeNavStrings(info, options, strings);
             return stringsResult;
         }
 
-        private List<string> MakeNavStrings(DataInfo info,
+        public static List<string> MakeNavStrings(DataInfo info,
                                             Options options,
                                             List<string> strings)
         {
@@ -844,9 +842,9 @@ namespace VSBootstrapImporter.Common.Services
             {
                 if (s.Contains(@"</body>") == true)
                 {
-                    if (info.HasScriptAsset() == true) 
+                    if (info.HasScriptAsset() == true)
                     {
-                        
+
                         if (info.ProjectType == Type_Options.BlazorServer)
                         {
                             str = "    @if(Request.Path.Value == " + Support.Quote(@"/" + options.PageName) + ")";
@@ -902,14 +900,14 @@ namespace VSBootstrapImporter.Common.Services
 
         // Razor support
 
-        private string GetRazorNameSpace(Options options)
+        public static string GetRazorNameSpace(Options options)
         {
             string nameSpace = "";
             string fileName = options.GetRazorNameSpaceSource();
             string search = "@namespace";
-            List<string> stringsFile = LoadStrings(fileName,options);
+            List<string> stringsFile = LoadStrings(fileName, options);
 
-            foreach(string s in stringsFile)
+            foreach (string s in stringsFile)
             {
                 if (s.Contains(search) == true)
                 {
@@ -921,7 +919,7 @@ namespace VSBootstrapImporter.Common.Services
             return nameSpace;
         }
 
-        private List<string> MakeRazor(DataInfo info,
+        public static List<string> MakeRazor(DataInfo info,
                                        Options options)
         {
             List<string> stringsResult = new List<string>();
@@ -966,8 +964,8 @@ namespace VSBootstrapImporter.Common.Services
                     else if ((options.SelectedScriptOptions != Script_Options.IgnoreScript) ||
                           (s.Contains("script>") == false))
                     {
-                        str = IsRazorScriptAllowed( s);
-                        if (string.IsNullOrEmpty(str) == false )
+                        str = IsRazorScriptAllowed(s);
+                        if (string.IsNullOrEmpty(str) == false)
                             stringsResult.Add(str);
                     }
                 }
@@ -983,16 +981,16 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private string IsRazorScriptAllowed( string str)
+        public static string IsRazorScriptAllowed(string str)
         {
             string result = "";
             if (str.Contains("<script") == false)
                 result = str;
-                               
+
             return result;
         }
 
-        private List<string> MakeRazorCodeBehind(Options options)
+        public static List<string> MakeRazorCodeBehind(Options options)
         {
             List<string> stringsResult = new List<string>();
 
@@ -1044,7 +1042,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private List<string> MakeRazorNavMenuStrings(Options options)
+        public static List<string> MakeRazorNavMenuStrings(Options options)
         {
             List<string> stringsResult = new List<string>();
             string str;
@@ -1059,7 +1057,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private List<string> MakeRazorCustomLayoutString(DataInfo info,
+        public static List<string> MakeRazorCustomLayoutString(DataInfo info,
                                                          Options options)
         {
             List<string> stringsResult = new List<string>();
@@ -1133,7 +1131,7 @@ namespace VSBootstrapImporter.Common.Services
             return stringsResult;
         }
 
-        private List<string> MakeRazorHostAssets(DataInfo info,
+        public static List<string> MakeRazorHostAssets(DataInfo info,
                                                 Options options)
         {
             List<string> stringsResult = new List<string>();
@@ -1159,14 +1157,14 @@ namespace VSBootstrapImporter.Common.Services
 
         #region Support Methods
         // support methods
-    
 
-        private List<string> LoadStrings(string fileName,
+
+        public static List<string> LoadStrings(string fileName,
                                          Options options)
         {
             List<string> strings = new List<string>();
 
-            if (CommonIO.Exists(fileName,options) == true)
+            if (CommonIO.Exists(fileName, options) == true)
             {
                 string[] strs = CommonIO.ReadAllLines(fileName, options);
                 foreach (string s in strs)

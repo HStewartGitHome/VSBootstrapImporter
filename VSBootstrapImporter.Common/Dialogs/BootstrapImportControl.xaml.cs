@@ -67,6 +67,7 @@
         {
             string str = e.NewValue.ToString();
 
+            ResetNew();
             if (string.IsNullOrEmpty(str) == false)
             {
                 LoadedProject = str;
@@ -170,10 +171,10 @@
 
         private void HandleDetails()
         {
-            Generator theGenerator = new Generator();
+
             UpdateOptionsData();
 
-            DataInfo info = theGenerator.CreateDataInfo(CurrentOptions);
+            DataInfo info = Generator.CreateDataInfo(CurrentOptions);
             info.IsBootstrapHtml = IsBootstrapHtml;
             Details dlg = new Details(info, CurrentOptions);
             dlg.ShowDialog();
@@ -243,11 +244,7 @@
             {
                 if (MessageBox.Show("Do you wish start new?", MsgTitle, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    ResetOptions();
-                    IsBootstrapHtml = false;
-                    CurrentOptions = new Options();
-                    Html.IsEnabled = false; ;
-                    IndexPage.IsEnabled = false;
+                    ResetNew();
                     UpdateScreen();
                 }
             }
@@ -422,6 +419,15 @@
             NavMenuOptions.SelectedValue = (int)NavMenu_Options.Default;
             PageOptions.SelectedValue = (int)Page_Options.Default;
             RenderModeOptions.SelectedValue = (int)RenderMode_Options.Default;
+        }
+
+        private void ResetNew()
+        {
+            ResetOptions();
+            IsBootstrapHtml = false;
+            CurrentOptions = new Options();
+            Html.IsEnabled = false; ;
+            IndexPage.IsEnabled = false;
         }
 
         private bool SetOptions()

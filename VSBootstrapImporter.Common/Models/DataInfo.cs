@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 
 namespace VSBootstrapImporter.Common.Models
 {
@@ -43,7 +41,7 @@ namespace VSBootstrapImporter.Common.Models
         public List<string> RazorAssetsStrings { get; set; }
         public List<string> RazorCodeBehindStrings { get; set; }
         public List<string> RazorCustomLayoutStrings { get; set; }
-  
+
         public string HostRenderMode { get; set; }
         public Type_Options ProjectType { get; set; }
 
@@ -68,18 +66,18 @@ namespace VSBootstrapImporter.Common.Models
             bool generateOk = true;
             if (ProjectType == Type_Options.ASPNetRazor)
             {
-                if ( (RazorCodeBehindStrings.Count == 0) ||
-                     (RazorCustomLayoutStrings.Count == 0) )
+                if ((RazorCodeBehindStrings.Count == 0) ||
+                     (RazorCustomLayoutStrings.Count == 0))
                 {
                     generateOk = false;
                 }
 
             }
-            
-            
-            if ( (BlazorStrings.Count > 0 ) && 
-                 (NewHostStrings.Count > 0 ) &&
-                 (NavMenuStrings.Count > 0 ) )
+
+
+            if ((BlazorStrings.Count > 0) &&
+                 (NewHostStrings.Count > 0) &&
+                 (NavMenuStrings.Count > 0))
             {
                 IsGenerateSuccessfull = generateOk;
             }

@@ -47,7 +47,7 @@
 
         protected internal virtual void OnAfterToolWindowCreate()
         {
-            
+
         }
     }
 }

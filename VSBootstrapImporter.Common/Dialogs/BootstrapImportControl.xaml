@@ -42,8 +42,6 @@
             <Button x:Name="Details" Content="Details" Width="75" Height="23" Canvas.Left="465" Canvas.Top="150" Click="Details_Click"/>
 	    <Button x:Name="Preview" Content="Preview" Width="75" Height="23" Canvas.Left="465" Canvas.Top="180" Click="Preview_Click" />
 
-            <Image x:Name="Icon" Width="75" Height="75" Canvas.Left="465" Canvas.Top="270" Source="BootstrapImportCommand.png" Panel.ZIndex="1"/>
-
  	     <GroupBox Header="Project" Height="166" Canvas.Left="0" Canvas.Top="380" Width="550" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Foreground="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
 
 

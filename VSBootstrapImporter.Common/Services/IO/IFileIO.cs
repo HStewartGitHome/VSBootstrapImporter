@@ -3,7 +3,7 @@
 namespace WpfNetBootstrap.Common.Services.IO
 {
     public interface IFileIO
-    { 
+    {
         void CopyDirectory(string source, string destination, bool traceException);
         void CreateDirectory(string destinationDirectory, bool traceException);
         bool Exists(string fileName, bool traceException);

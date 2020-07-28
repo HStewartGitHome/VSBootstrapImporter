@@ -39,18 +39,16 @@ namespace VSBootstrapImporter.Common.Services
                                             bool previewOnly,
                                             bool allowOutput)
         {
-            Generator theGenerator = new Generator();
-            Output theOutput = new Output();
 
             if (currentOptions.IsTraceOn(Trace_Options.TraceInfo))
                 Trace.TraceInformation("Generating DataInfo");
 
-            DataInfo info = theGenerator.CreateDataInfo(currentOptions);
+            DataInfo info = Generator.CreateDataInfo(currentOptions);
 
             if (allowOutput == true)
             {
                 if (previewOnly == false)
-                    theOutput.OutputData(currentOptions, info);
+                    Output.OutputData(currentOptions, info);
                 Output.OutputPreview(currentOptions, info);
             }
 
@@ -61,8 +59,7 @@ namespace VSBootstrapImporter.Common.Services
                                    string strPath,
                                    string strHtml)
         {
-            Generator theGenerator = new Generator();
-            IsBootstrapHtml = theGenerator.IsBootstrapHtml(options, strPath, strHtml);
+            IsBootstrapHtml = Generator.IsBootstrapHtml(options, strPath, strHtml);
             bool result = IsBootstrapHtml;
 
             if (result == false)

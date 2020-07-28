@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using VSBootstrapImport.SetupExpected.Models;
 using WpfNetBootstrap.Common.Services.IO;
 
@@ -68,7 +64,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun _Host.cshtml for blazor 
             FileDataInfo info = new FileDataInfo
             {
-                FilePath = projectPath +  @"\VSBootstrapImporter.Tests\MinBlazor\Min_Host.cshtml",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinBlazor\Min_Host.cshtml",
                 Method = "Min_Host_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -219,7 +215,7 @@ namespace VSBootstrapImport.SetupExpected
         #endregion
 
         #region main File method
-        private void AddFileInfo( FileDataInfo info)
+        private void AddFileInfo(FileDataInfo info)
         {
             string str, strEnd;
             string[] strings = _fileIO.ReadAllLines(info.FilePath, false);
@@ -231,14 +227,14 @@ namespace VSBootstrapImport.SetupExpected
             str = "Adding File [" + info.FilePath + "] Count=" + count.ToString();
             Console.WriteLine(str);
 
-            if ( count > 0 )
+            if (count > 0)
             {
                 AddString("       public static List<string> " + info.Method + "()");
                 AddString("       {");
                 AddString("            List<string> strings = new List<string>");
                 AddString("            {");
 
-                foreach( string s in strings )
+                foreach (string s in strings)
                 {
                     if (index < count)
                         strEnd = ",";
@@ -258,31 +254,31 @@ namespace VSBootstrapImport.SetupExpected
         #endregion
 
         #region support methods
-        private string Quote(string str)
+        public static string Quote(string str)
         {
             string result = '"' + str + '"';
             return result;
         }
 
-        private string AdjustQuotes(string str)
+        public static string AdjustQuotes(string str)
         {
             string result = str.Replace(@"""", @"\""");
             return result;
         }
 
-        private string AdjustSlashs(string str)
+        public static string AdjustSlashs(string str)
         {
             string result = str.Replace(@"\", @"\\");
             return result;
         }
 
-        private void AddString( string str )
+        private void AddString(string str)
         {
             _strings.Add(str);
             // Console.WriteLine(str);
         }
 
-        private string GetRootProjectPath()
+        public static string GetRootProjectPath()
         {
             string desireDir = "VSBootstrapImport.SetupExpected";
             string projectPath = "";
@@ -306,7 +302,7 @@ namespace VSBootstrapImport.SetupExpected
                     }
                 }
             }
-            catch(IOException e )
+            catch (IOException e)
             {
                 Console.WriteLine("IOException getting project directory", e);
             }

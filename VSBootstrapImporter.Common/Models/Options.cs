@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Windows.Controls.Primitives;
 
 namespace VSBootstrapImporter.Common.Models
 {
@@ -192,8 +191,8 @@ namespace VSBootstrapImporter.Common.Models
                     break;
             }
 
-            
-            
+
+
             return result;
         }
 

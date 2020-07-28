@@ -74,7 +74,7 @@ namespace VSBootstrapImporter.Common.Services
             return result;
         }
 
-    
+
 
         public static Asset MakeImageAsset(string str)
 

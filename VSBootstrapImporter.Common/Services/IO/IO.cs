@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using VSBootstrapImporter.Common.Models;
 
 namespace WpfNetBootstrap.Common.Services.IO
@@ -10,7 +6,7 @@ namespace WpfNetBootstrap.Common.Services.IO
     public static class CommonIO
     {
         #region File IO
-      
+
         public static void OutputFile(string fileName,
                                       List<string> strings,
                                       Options options)
@@ -37,7 +33,7 @@ namespace WpfNetBootstrap.Common.Services.IO
 
         #endregion
 
-         #region Directory io
+        #region Directory io
         public static void CreateDirectory(string destinationDirectory,
                                            Options options)
         {
@@ -55,7 +51,7 @@ namespace WpfNetBootstrap.Common.Services.IO
             fileIO.CopyDirectory(source, destination, traceException);
         }
 
-  
+
         #endregion
     }
 }

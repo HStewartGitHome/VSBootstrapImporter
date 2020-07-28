@@ -6,7 +6,7 @@ using System.IO;
 namespace WpfNetBootstrap.Common.Services.IO
 {
     public class FileIO : IFileIO
-    { 
+    {
 
         #region File IO
         public void OutputFile(string fileName,
@@ -43,7 +43,7 @@ namespace WpfNetBootstrap.Common.Services.IO
             return result;
         }
 
-        public string[] ReadAllLines(string fileName, 
+        public string[] ReadAllLines(string fileName,
                                      bool traceException)
         {
             string[] strs = Array.Empty<string>();
@@ -91,11 +91,11 @@ namespace WpfNetBootstrap.Common.Services.IO
         public void WriteLog(string str,
                            bool traceException)
         {
-           // this is ignore during normal operations
-           // use LogFileIO if desiring logging
+            // this is ignore during normal operations
+            // use LogFileIO if desiring logging
         }
 
-        public void SetDataDir( string str )
+        public void SetDataDir(string str)
         {
             throw new NotImplementedException();
         }

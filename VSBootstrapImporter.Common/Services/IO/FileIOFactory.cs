@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WpfNetBootstrap.Common.Services.IO
+﻿namespace WpfNetBootstrap.Common.Services.IO
 {
- 
+
 
     public static class FileIOFactory
     {
@@ -16,7 +10,7 @@ namespace WpfNetBootstrap.Common.Services.IO
             return _FileIO;
         }
 
-        public static void SetFileIO( IFileIO fileIO)
+        public static void SetFileIO(IFileIO fileIO)
         {
             _FileIO = fileIO;
         }

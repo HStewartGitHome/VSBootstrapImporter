@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System;
 using VSBootstrapImporter.Common.Models;
 using WpfNetBootstrap.Common.Services.IO;
 
@@ -9,7 +8,7 @@ namespace VSBootstrapImporter.Common.Services
 {
     public class Output : CommonSupport
     {
-        public void OutputData(Options options,
+        public static void OutputData(Options options,
                                DataInfo info)
         {
             try
@@ -46,7 +45,7 @@ namespace VSBootstrapImporter.Common.Services
                 }
                 info.IsModificationsSuccessfull = true;
             }
-            catch(IOException e)
+            catch (IOException e)
             {
                 if (options.IsTraceOn(Trace_Options.TraceExceptions))
                     Trace.TraceError("Exception outputting data", e);
@@ -96,7 +95,7 @@ namespace VSBootstrapImporter.Common.Services
         }
 
 
-        private void MoveAssetsDirectory(Options options,
+        public static void MoveAssetsDirectory(Options options,
                                          DataInfo info)
         {
             string sourceDirectory = GetSourceDirectory(options);
@@ -153,7 +152,7 @@ namespace VSBootstrapImporter.Common.Services
                             Trace.TraceInformation("               Dest  =" + destPath);
                         }
 
-                        CommonIO.CopyDirectory(sourcePath, destPath,options);
+                        CommonIO.CopyDirectory(sourcePath, destPath, options);
                     }
                 }
             }
@@ -164,7 +163,7 @@ namespace VSBootstrapImporter.Common.Services
             }
         }
 
-        private void CopyAssetsDirectory(Options options)
+        public static void CopyAssetsDirectory(Options options)
         {
             string sourceDirectory = GetSourceDirectory(options);
             string destinationDirectory = GetDestinationDirectory(options);
@@ -177,9 +176,9 @@ namespace VSBootstrapImporter.Common.Services
             CommonIO.CopyDirectory(sourceDirectory, destinationDirectory, options);
         }
 
-  
 
-        private void OutputBlazorFile(Options options,
+
+        public static void OutputBlazorFile(Options options,
                                       DataInfo info)
         {
             string blazerFile = GetRazorFile(options, info);
@@ -189,7 +188,7 @@ namespace VSBootstrapImporter.Common.Services
             CommonIO.OutputFile(blazerFile, info.BlazorStrings, options);
         }
 
-        private void OutputRazorCodeBehindFile(Options options,
+        public static void OutputRazorCodeBehindFile(Options options,
                                                DataInfo info)
         {
             string blazerFile = GetRazorFile(options, info) + ".cs";
@@ -198,7 +197,7 @@ namespace VSBootstrapImporter.Common.Services
             CommonIO.OutputFile(blazerFile, info.RazorCodeBehindStrings, options);
         }
 
-        private void OutputCustomRazorLayout(Options options,
+        public static void OutputCustomRazorLayout(Options options,
                                              DataInfo info)
         {
             string strFile = GetRazorCustomLayoutFile(options, info);

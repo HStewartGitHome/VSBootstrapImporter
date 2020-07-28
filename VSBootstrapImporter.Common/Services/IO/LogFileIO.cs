@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WpfNetBootstrap.Common.Services.IO;
 
 namespace VSBootstrapImporter.Common.Services.IO
@@ -14,7 +9,7 @@ namespace VSBootstrapImporter.Common.Services.IO
         private readonly string _fileName = "";
         private readonly FileIO _fileIO = null;
 
-        public LogFileIO( string fileName)
+        public LogFileIO(string fileName)
         {
             _fileName = fileName;
             _fileIO = new FileIO();
@@ -69,7 +64,7 @@ namespace VSBootstrapImporter.Common.Services.IO
             _fileIO.AppendFile(fileName, str, traceException);
         }
 
-        public  void WriteLog( string str,
+        public void WriteLog(string str,
                                bool traceException)
         {
             _fileIO.AppendFile(_fileName, str, traceException);
