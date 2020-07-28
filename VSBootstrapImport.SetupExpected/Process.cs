@@ -46,7 +46,7 @@ namespace VSBootstrapImport.SetupExpected
         {
             string fileName = OutputFilePath;
 
-            Console.WriteLine("Outputing file [" + fileName + "] with " + _strings.Count.ToString() + " Lines");
+            Console.WriteLine("Outputing Method [" + fileName + "] with " + _strings.Count.ToString() + " Lines");
             foreach (string s in _strings)
                 Console.WriteLine("-----" + s);
 
@@ -58,14 +58,17 @@ namespace VSBootstrapImport.SetupExpected
         #region Initialize private methods
         private void InitializeFileInfos()
         {
-            // change the contents of this method if desired to change paths
 
-            
+
+            // Get root project path for following locations
+            string projectPath = GetRootProjectPath();
+
+
             // Expected Blazor files
             // Minimun _Host.cshtml for blazor 
             FileDataInfo info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinBlazor\Min_Host.cshtml",
+                FilePath = projectPath +  @"\VSBootstrapImporter.Tests\MinBlazor\Min_Host.cshtml",
                 Method = "Min_Host_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -73,7 +76,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun NavMenu.Razor for blazor
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinBlazor\MinNavMenu.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinBlazor\MinNavMenu.Razor",
                 Method = "MinNavMenu_Razor_File"
             };
             _fileInfos.Add(info);
@@ -81,7 +84,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Min.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinBlazor\MinMin.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinBlazor\MinMin.Razor",
                 Method = "MinMin_Razor_File"
             };
             _fileInfos.Add(info);
@@ -90,7 +93,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun _Host.cshtml for blazor 
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasm\WasmIndex.html",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasm\WasmIndex.html",
                 Method = "Min_Wasm_Index_Html_File"
             };
             _fileInfos.Add(info);
@@ -98,7 +101,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun NavMenu.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasm\WasmNavMenu.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasm\WasmNavMenu.Razor",
                 Method = "Min_Wasm_NavMenu_Razor_File"
             };
             _fileInfos.Add(info);
@@ -106,7 +109,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Wasm.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasm\Wasm.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasm\Wasm.Razor",
                 Method = "Wasm_Razor_File"
             };
             _fileInfos.Add(info);
@@ -116,7 +119,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun index.html for blazor 
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWAIndex.html",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWAIndex.html",
                 Method = "Min_Wasm_PWA_Index_Html_File"
             };
             _fileInfos.Add(info);
@@ -124,7 +127,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun NavMenu.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWANavMenu.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWANavMenu.Razor",
                 Method = "Min_Wasm_PWA_NavMenu_Razor_File"
             };
             _fileInfos.Add(info);
@@ -132,7 +135,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Wasm.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWA.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinWasmPWA\WasmPWA.Razor",
                 Method = "Wasm_PWA_Razor_File"
             };
             _fileInfos.Add(info);
@@ -141,7 +144,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun _Layout.cshtml for blazor 
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\Razor_Layout.cshtml",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\Razor_Layout.cshtml",
                 Method = "Min_Razor_Layout_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -149,7 +152,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun NavMenu.Razor for blazor wasm
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\WasmPWANavMenu.Razor",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\WasmPWANavMenu.Razor",
                 Method = "Min_Wasm_PWA_NavMenu_Razor_File"
             };
             _fileInfos.Add(info);
@@ -157,7 +160,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Razor.CSHtml for Razor
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\Razor.cshtml",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\Razor.cshtml",
                 Method = "MIN_Razor_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -165,7 +168,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Razor.CSHtml.cs for Razor
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\Razor.cshtml.cs",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\Razor.cshtml.cs",
                 Method = "MIN_Razor_CSHtml_CS_File"
             };
             _fileInfos.Add(info);
@@ -173,7 +176,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun Razor_Layout.CSHtml for Razor
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\Razor_Razor_Layout.cshtml",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\Razor_Razor_Layout.cshtml",
                 Method = "MIN_Razor_Razor_Layout_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -182,7 +185,7 @@ namespace VSBootstrapImport.SetupExpected
             // Minimun _Layout.CSHtml for Razor
             info = new FileDataInfo
             {
-                FilePath = @"C:\SRC\VSBootstrapImporter\VSBootstrapImporter.Tests\MinRazor\Razor_Layout.cshtml",
+                FilePath = projectPath + @"\VSBootstrapImporter.Tests\MinRazor\Razor_Layout.cshtml",
                 Method = "MIN_Razor_Layout_CSHtml_File"
             };
             _fileInfos.Add(info);
@@ -223,6 +226,8 @@ namespace VSBootstrapImport.SetupExpected
             int index = 1;
             int count = strings.Length;
 
+            str = "Adding Method [" + info.Method + "]";
+            Console.WriteLine(str);
             str = "Adding File [" + info.FilePath + "] Count=" + count.ToString();
             Console.WriteLine(str);
 
@@ -275,6 +280,38 @@ namespace VSBootstrapImport.SetupExpected
         {
             _strings.Add(str);
             // Console.WriteLine(str);
+        }
+
+        private string GetRootProjectPath()
+        {
+            string desireDir = "VSBootstrapImport.SetupExpected";
+            string projectPath = "";
+
+            try
+            {
+                string currentDirectory = Directory.GetCurrentDirectory();
+                DirectoryInfo dirInfo = Directory.GetParent(currentDirectory);
+                bool continueExecution = true;
+                while (continueExecution)
+                {
+                    if (desireDir.CompareTo(dirInfo.Name) == 0)
+                    {
+                        dirInfo = Directory.GetParent(dirInfo.FullName);
+                        continueExecution = false;
+                        projectPath = dirInfo.FullName;
+                    }
+                    else
+                    {
+                        dirInfo = Directory.GetParent(dirInfo.FullName);
+                    }
+                }
+            }
+            catch(IOException e )
+            {
+                Console.WriteLine("IOException getting project directory", e);
+            }
+
+            return projectPath;
         }
         #endregion
     }

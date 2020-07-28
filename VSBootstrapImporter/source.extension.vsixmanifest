@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="VSBootstrapImporter.0fae9340-7b7c-48e5-83ac-17785a08b6bf" Version="1.0.2" Language="en-US" Publisher="Stewart Hyde" />
+        <Identity Id="VSBootstrapImporter.0fae9340-7b7c-48e5-83ac-17785a08b6bf" Version="1.1.0" Language="en-US" Publisher="Stewart Hyde" />
         <DisplayName>Visual Studio Bootstrap Importer</DisplayName>
         <Description xml:space="preserve">Imports Bootstrap HTML contents into Microsoft Blazer Server, Blazer Webassembly and Razor ASP.Net projects</Description>
+        <MoreInfo>https://github.com/HStewartGitHome/VSBootstrapImporter</MoreInfo>
         <License>LICENSE.txt</License>
         <GettingStartedGuide>BootstrapImporter.docx</GettingStartedGuide>
         <Icon>Resources\BootstrapImportCommand.png</Icon>

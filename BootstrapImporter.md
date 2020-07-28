@@ -116,12 +116,16 @@ index.html. You can change which file with editorial command.
 
 A screenshot of a cell phone Description automatically generated
 
+A screenshot of a cell phone Description automatically generated
+
 If you pick a non-bootstrap project such as download html–or html from another
 project, the extension will be prompted with the following screen and extension
 will attempt to add the specific information. But a lot of sites have embedded
 scripts in body and those scripts are not allowed on Blazor/razor page.
 
 ![A screenshot of a cell phone Description automatically generated](media/a1d14855c3888e2317c114ff86776e61.jpg)
+
+A screenshot of a cell phone Description automatically generated
 
 *Preview*
 ---------
@@ -159,7 +163,7 @@ valid. This was originally intended for more advance options, but I found it was
 useful in normal actively. So, this become more of informational screen as
 below.
 
-![](media/48115e2bf034b8dded7fc63b560ae346.png)
+![](media/fffa29bc91bfcb935dcda8b7c228105c.png)
 
 *Select*
 --------
@@ -171,6 +175,8 @@ and will used current selected project. The following screen allows you to
 change product directory.
 
 ![A screenshot of a cell phone Description automatically generated](media/9cc8a6e4fa4dc190c06dc6f7278796b2.jpg)
+
+A screenshot of a cell phone Description automatically generated
 
 Note, Blazor Web-assembly, does not support CSS Isolation means the CSS must be
 shared between all pages. But as long as the CSS modification can function in
@@ -238,7 +244,9 @@ handled in the generator. The following options are available.
 
 5.  Static Move only Assets on Same Index Page
 
-6.  None
+6.  Move and Share between Pages
+
+7.  None
 
 For different Bootstrap assets to work across multiple pages, RenderMode for
 Blazor Server needs to be marked as static. Also, Assets could be different if
@@ -434,7 +442,6 @@ You can download the projects and Bootstrap Studio from
     2019
 
 Steps to reproduce example provided Testa and Apple on Blazor Server
---------------------------------------------------------------------
 
 The following are steps to reproduce the provided an example with both Tesla and
 Apple on Blazor Server
@@ -562,9 +569,13 @@ Blazor Web Assembly PWA reduce with Phone like menu
 
 ![A screenshot of a cell phone Description automatically generated](media/d4cf091304333e4e117c05aa164e9942.png)
 
+A screenshot of a cell phone Description automatically generated
+
 And without menu
 
 ![A screenshot of a cell phone Description automatically generated](media/7e7f69dfdb8d672acc90aeaa89fa1510.png)
+
+A screenshot of a cell phone Description automatically generated
 
 Razor Page showing Tesla
 
@@ -573,6 +584,8 @@ Razor Page showing Tesla
 Razor Page showing Apple Page
 
 ![A screenshot of a cell phone Description automatically generated](media/c6d34360d7a9a4310482c38566bc5539.png)
+
+A screenshot of a cell phone Description automatically generated
 
 Future Enhancements
 ===================
