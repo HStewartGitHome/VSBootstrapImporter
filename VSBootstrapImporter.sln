@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSBootstrapImporter", "VSBootstrapImporter\VSBootstrapImporter.csproj", "{19BCBCD5-3756-4C87-9443-C9C20ED47113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSBootstrapImporter.Common", "VSBootstrapImporter.Common\VSBootstrapImporter.Common.csproj", "{39EE1ED0-F20E-46C0-88CF-089F4701D40D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfNetBootstrap", "WpfNetBootstrap\WpfNetBootstrap.csproj", "{68C032FF-CAC1-4E3E-8C11-9D6B670FAD51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSBootstrapImporter.Tests", "VSBootstrapImporter.Tests\VSBootstrapImporter.Tests.csproj", "{1C25B4F0-4848-46CD-92B8-87BA4DA2C8F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSBootstrapImport.SetupExpected", "VSBootstrapImport.SetupExpected\VSBootstrapImport.SetupExpected.csproj", "{2E2C3710-5AA9-460B-BD7F-F67A5CAFEF70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19BCBCD5-3756-4C87-9443-C9C20ED47113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BCBCD5-3756-4C87-9443-C9C20ED47113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BCBCD5-3756-4C87-9443-C9C20ED47113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BCBCD5-3756-4C87-9443-C9C20ED47113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EE1ED0-F20E-46C0-88CF-089F4701D40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EE1ED0-F20E-46C0-88CF-089F4701D40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EE1ED0-F20E-46C0-88CF-089F4701D40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EE1ED0-F20E-46C0-88CF-089F4701D40D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C032FF-CAC1-4E3E-8C11-9D6B670FAD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C032FF-CAC1-4E3E-8C11-9D6B670FAD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C032FF-CAC1-4E3E-8C11-9D6B670FAD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C032FF-CAC1-4E3E-8C11-9D6B670FAD51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C25B4F0-4848-46CD-92B8-87BA4DA2C8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C25B4F0-4848-46CD-92B8-87BA4DA2C8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C25B4F0-4848-46CD-92B8-87BA4DA2C8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C25B4F0-4848-46CD-92B8-87BA4DA2C8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2C3710-5AA9-460B-BD7F-F67A5CAFEF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2C3710-5AA9-460B-BD7F-F67A5CAFEF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2C3710-5AA9-460B-BD7F-F67A5CAFEF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2C3710-5AA9-460B-BD7F-F67A5CAFEF70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47C51C6B-DDEC-465F-81DC-6D08C5B401EC}
+	EndGlobalSection
+EndGlobal

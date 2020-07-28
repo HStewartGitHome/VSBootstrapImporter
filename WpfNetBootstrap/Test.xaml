@@ -1,0 +1,12 @@
+﻿<Window x:Class="WpfNetBootstrap.Test"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local11="clr-namespace:VSBootstrapImporter;assembly=VSBootstrapImporter.Common"
+        mc:Ignorable="d"
+        Title="Test" Height="582" Width="587">
+    <Grid>
+        <local11:BootstrapImportControl ProjectPath="c:\src\BSTest\Blazor\Blazor\"></local11:BootstrapImportControl>
+    </Grid>
+</Window>
