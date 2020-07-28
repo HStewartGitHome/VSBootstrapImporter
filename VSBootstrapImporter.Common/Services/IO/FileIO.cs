@@ -91,7 +91,8 @@ namespace WpfNetBootstrap.Common.Services.IO
         public void WriteLog(string str,
                            bool traceException)
         {
-            throw new NotImplementedException();
+           // this is ignore during normal operations
+           // use LogFileIO if desiring logging
         }
 
         public void SetDataDir( string str )

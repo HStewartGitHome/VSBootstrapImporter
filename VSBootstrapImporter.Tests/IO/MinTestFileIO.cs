@@ -11,6 +11,8 @@ namespace VSBootstrapImporter.Tests.IO
 {
     public class MinTestFileIO : IFileIO
     {
+        private bool _enableLogging = false;
+
         #region Data
         IFileIO _fileIO = null;
         string _dataDir = "";
@@ -20,7 +22,10 @@ namespace VSBootstrapImporter.Tests.IO
         #region Contructor
         public MinTestFileIO(string dir)
         {
-            _fileIO = new LogFileIO(@"c:\temp\log\mintest.log");
+            if (_enableLogging)
+                _fileIO = new LogFileIO(@"c:\temp\log\mintest.log");
+            else
+                _fileIO = new FileIO();
             SetDataDir(dir);
         }
         #endregion
@@ -71,25 +76,28 @@ namespace VSBootstrapImporter.Tests.IO
         public string[] ReadAllLines(string fileName, bool traceException)
         {
             string actualFileName = GetActualFileName(fileName);
-            _fileIO.WriteLog("Actual FileName = " + actualFileName, traceException);
+            WriteLog("Actual FileName = " + actualFileName, traceException);
             string[] output =  _fileIO.ReadAllLines(actualFileName, traceException);
 
-            string str = "Lines = " + output.Length.ToString();
-            _fileIO.WriteLog(str, traceException);
-            foreach (string s in output)
-            {
-                str = "---" + s;
-                _fileIO.WriteLog(str, traceException);
+            if ( _enableLogging )
+            { 
+                string str = "Lines = " + output.Length.ToString();
+                WriteLog(str, traceException);
+                foreach (string s in output)
+                {
+                    str = "---" + s;
+                    WriteLog(str, traceException);
+                }
             }
 
             return output;
-
         }
 
         public void WriteLog(string str,
                           bool traceException)
         {
-            _fileIO.WriteLog( str, traceException);
+            if ( _enableLogging )
+                _fileIO.WriteLog( str, traceException);
         }
 
         public void SetDataDir(string str)
